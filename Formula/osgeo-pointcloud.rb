@@ -39,11 +39,11 @@ class OsgeoPointcloud < Formula
 
   depends_on "llvm" => :build
 
-  if build.with?("postgresql10")
-    depends_on "osgeo-postgresql@10"
-  else
-    depends_on "osgeo-postgresql"
-  end
+  # if build.with?("postgresql10")
+  #   depends_on "osgeo-postgresql@10"
+  # else
+  #   depends_on "osgeo-postgresql"
+  # end
 
   # Fix boolean case errors when compiling againt pg11
   # https://github.com/pgpointcloud/pointcloud/pull/237
@@ -53,11 +53,11 @@ class OsgeoPointcloud < Formula
   end
 
   def install
-    if build.with?("postgresql10")
-      args = "--with-pgconfig=#{Formula["osgeo-postgresql@10"].opt_bin}/pg_config"
-    else
-      args = "--with-pgconfig=#{Formula["osgeo-postgresql"].opt_bin}/pg_config"
-    end
+    # if build.with?("postgresql10")
+    #   args = "--with-pgconfig=#{Formula["osgeo-postgresql@10"].opt_bin}/pg_config"
+    # else
+    #   args = "--with-pgconfig=#{Formula["osgeo-postgresql"].opt_bin}/pg_config"
+    # end
 
     mkdir lib/"postgresql"
     mkdir_p pkgshare/"postgresql/extension/"

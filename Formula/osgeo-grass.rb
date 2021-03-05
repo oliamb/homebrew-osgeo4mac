@@ -102,11 +102,11 @@ class OsgeoGrass < Formula
   # depends_on "libomp" if build.with? "openmp"
   # depends_on "osgeo-pdal"
 
-  if build.with?("pg11")
-    depends_on "osgeo-postgresql@11"
-  else
-    depends_on "osgeo-postgresql"
-  end
+  # if build.with?("pg11")
+  #   depends_on "osgeo-postgresql@11"
+  # else
+  #   depends_on "osgeo-postgresql"
+  # end
 
   # depends_on :x11 if build.without? "aqua" # needs to find at least X11/include/GL/gl.h
 
@@ -373,14 +373,14 @@ class OsgeoGrass < Formula
 
     #args << "--with-liblas=#{Formula["osgeo-liblas"].opt_bin}/liblas-config" # if build.with? "liblas"
 
-    args << "--with-postgres"
-    if build.with?("pg11")
-      args << "--with-postgres-includes=#{Formula["osgeo-postgresql@11"].opt_include}"
-      args << "--with-postgres-libs=#{Formula["osgeo-postgresql@11"].opt_lib}"
-    else
-      args << "--with-postgres-includes=#{Formula["osgeo-postgresql"].opt_include}"
-      args << "--with-postgres-libs=#{Formula["osgeo-postgresql"].opt_lib}"
-    end
+    # args << "--with-postgres"
+    # if build.with?("pg11")
+    #   args << "--with-postgres-includes=#{Formula["osgeo-postgresql@11"].opt_include}"
+    #   args << "--with-postgres-libs=#{Formula["osgeo-postgresql@11"].opt_lib}"
+    # else
+    #   args << "--with-postgres-includes=#{Formula["osgeo-postgresql"].opt_include}"
+    #   args << "--with-postgres-libs=#{Formula["osgeo-postgresql"].opt_lib}"
+    # end
 
     if build.with?("mysql")
       args << "--with-mysql"

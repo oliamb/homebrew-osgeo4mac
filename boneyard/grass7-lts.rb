@@ -42,7 +42,7 @@ class Grass7Lts < Formula
   depends_on "python@2"
   depends_on "numpy"
   depends_on "wxpython"
-  depends_on "osgeo-postgresql" => :optional
+  # depends_on "osgeo-postgresql" => :optional
   depends_on "mysql" => :optional
   depends_on "cairo"
   depends_on "ghostscript" # for cartographic composer previews

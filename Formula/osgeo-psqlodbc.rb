@@ -51,11 +51,11 @@ class OsgeoPsqlodbc < Formula
   depends_on "openssl"
   depends_on "unixodbc"
 
-  if build.with?("pg11")
-    depends_on "osgeo-postgresql@11"
-  else
-    depends_on "osgeo-postgresql"
-  end
+  # if build.with?("pg11")
+  #   depends_on "osgeo-postgresql@11"
+  # else
+  #   depends_on "osgeo-postgresql"
+  # end
 
   def install
     system "./bootstrap" if build.head?

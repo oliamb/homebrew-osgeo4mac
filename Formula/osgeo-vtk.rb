@@ -155,11 +155,11 @@ class OsgeoVtk < Formula
   depends_on "tbb"
   depends_on "inetutils"
 
-  if build.with?("pg11")
-    depends_on "osgeo-postgresql@11"
-  else
-    depends_on "osgeo-postgresql"
-  end
+  # if build.with?("pg11")
+  #   depends_on "osgeo-postgresql@11"
+  # else
+  #   depends_on "osgeo-postgresql"
+  # end
 
   depends_on "open-mpi"
   # depends_on "osgeo-mpi4py"

@@ -59,11 +59,11 @@ class OsgeoSagaLts < Formula
   # triggers a source (re)build of boost --with-python
   depends_on "osgeo-vigra" => :optional
 
-  if build.with?("pg10")
-    depends_on "osgeo-postgresql@10"
-  else
-    depends_on "osgeo-postgresql"
-  end
+  # if build.with?("pg10")
+  #   depends_on "osgeo-postgresql@10"
+  # else
+  #   depends_on "osgeo-postgresql"
+  # end
 
   resource "app_icon" do
     url "https://osgeo4mac.s3.amazonaws.com/src/saga_gui.icns"
@@ -130,11 +130,11 @@ class OsgeoSagaLts < Formula
 
     args << "--enable-python" # if build.with? "python"
 
-    if build.with?("pg10")
-      args << "--with-postgresql=#{Formula["osgeo-postgresql@10"].opt_bin}/pg_config"
-    else
-      args << "--with-postgresql=#{Formula["osgeo-postgresql"].opt_bin}/pg_config" # if build.with? "postgresql"
-    end
+    # if build.with?("pg10")
+    #   args << "--with-postgresql=#{Formula["osgeo-postgresql@10"].opt_bin}/pg_config"
+    # else
+    #   args << "--with-postgresql=#{Formula["osgeo-postgresql"].opt_bin}/pg_config" # if build.with? "postgresql"
+    # end
 
     system "autoreconf", "-i"
     system "./configure", *args

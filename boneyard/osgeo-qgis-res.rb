@@ -42,11 +42,11 @@ class OsgeoQgisRes < Formula
   depends_on "osgeo-pyqt"
 
   # psycopg2
-  if build.with?("pg10")
-    depends_on "osgeo-postgresql@10"
-  else
-    depends_on "osgeo-postgresql"
-  end
+  # if build.with?("pg10")
+  #   depends_on "osgeo-postgresql@10"
+  # else
+  #   depends_on "osgeo-postgresql"
+  # end
 
   depends_on "swig"
   depends_on "libagg"

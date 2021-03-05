@@ -65,11 +65,11 @@ class OsgeoOssim < Formula
 
   depends_on "openjdk" => :optional # => ["1.8", :build]
 
-  if build.with? "pg10"
-    depends_on "osgeo-postgresql@10"
-  else
-    depends_on "osgeo-postgresql"
-  end
+  # if build.with? "pg10"
+  #   depends_on "osgeo-postgresql@10"
+  # else
+  #   depends_on "osgeo-postgresql"
+  # end
 
   def install
     ENV.cxx11

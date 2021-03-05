@@ -193,11 +193,11 @@ class OsgeoQgis < Formula
   depends_on "osgeo-pyspatialite" # for DB Manager
 
   # use newer postgresql client than Apple's, also needed by `psycopg2`
-  if build.with?("pg10")
-    depends_on "osgeo-postgresql@10"
-  else
-    depends_on "osgeo-postgresql"
-  end
+  # if build.with?("pg10")
+  #   depends_on "osgeo-postgresql@10"
+  # else
+  #   depends_on "osgeo-postgresql"
+  # end
 
   depends_on "osgeo-oracle-client-sdk" if build.with?("oracle")
 
@@ -653,16 +653,16 @@ class OsgeoQgis < Formula
     args << "-DFCGI_LIBRARY=#{fcgi_opt}/lib/libfcgi.dylib"
 
     # postgresql
-    args << "-DWITH_POSTGRESQL=TRUE"
-    if build.with?("pg10")
-      args << "-DPOSTGRES_CONFIG=#{Formula["osgeo-postgresql@10"].opt_bin}/pg_config"
-      args << "-DPOSTGRES_INCLUDE_DIR=#{Formula["osgeo-postgresql@10"].opt_include}"
-      args << "-DPOSTGRES_LIBRARY=#{Formula["osgeo-postgresql@10"].opt_lib}/libpq.dylib"
-    else
-      args << "-DPOSTGRES_CONFIG=#{Formula["osgeo-postgresql"].opt_bin}/pg_config"
-      args << "-DPOSTGRES_INCLUDE_DIR=#{Formula["osgeo-postgresql"].opt_include}"
-      args << "-DPOSTGRES_LIBRARY=#{Formula["osgeo-postgresql"].opt_lib}/libpq.dylib"
-    end
+    # args << "-DWITH_POSTGRESQL=TRUE"
+    # if build.with?("pg10")
+    #   args << "-DPOSTGRES_CONFIG=#{Formula["osgeo-postgresql@10"].opt_bin}/pg_config"
+    #   args << "-DPOSTGRES_INCLUDE_DIR=#{Formula["osgeo-postgresql@10"].opt_include}"
+    #   args << "-DPOSTGRES_LIBRARY=#{Formula["osgeo-postgresql@10"].opt_lib}/libpq.dylib"
+    # else
+    #   args << "-DPOSTGRES_CONFIG=#{Formula["osgeo-postgresql"].opt_bin}/pg_config"
+    #   args << "-DPOSTGRES_INCLUDE_DIR=#{Formula["osgeo-postgresql"].opt_include}"
+    #   args << "-DPOSTGRES_LIBRARY=#{Formula["osgeo-postgresql"].opt_lib}/libpq.dylib"
+    # end
 
     # grass
     args << "-DWITH_GRASS7=TRUE"

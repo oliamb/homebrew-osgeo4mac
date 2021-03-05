@@ -40,11 +40,11 @@ class OsgeoPgadmin3Lts < Formula
   depends_on "krb5"
   # depends_on "python@2" # for Sphinx
 
-  if build.with?("pg10")
-    depends_on "osgeo-postgresql@10"
-  else
-    depends_on "osgeo-postgresql"
-  end
+  # if build.with?("pg10")
+  #   depends_on "osgeo-postgresql@10"
+  # else
+  #   depends_on "osgeo-postgresql"
+  # end
 
   # resource "Sphinx" do
   #   url "https://files.pythonhosted.org/packages/2a/86/8e1e8400bb6eca5ed960917952600fce90599e1cb0d20ddedd81ba163370/Sphinx-1.8.5.tar.gz"
@@ -158,11 +158,11 @@ class OsgeoPgadmin3Lts < Formula
 
     ENV.append "CXXFLAGS", "-fno-delete-null-pointer-checks -Wno-unused-local-typedefs"
 
-    if build.with?("pg10")
-      args << "--with-pgsql=#{Formula["osgeo-postgresql@10"].opt_prefix}"
-    else
-      args << "--with-pgsql=#{Formula["osgeo-postgresql"].opt_prefix}"
-    end
+    # if build.with?("pg10")
+    #   args << "--with-pgsql=#{Formula["osgeo-postgresql@10"].opt_prefix}"
+    # else
+    #   args << "--with-pgsql=#{Formula["osgeo-postgresql"].opt_prefix}"
+    # end
 
     ENV.append "CPPFLAGS", "-fno-delete-null-pointer-checks"
 

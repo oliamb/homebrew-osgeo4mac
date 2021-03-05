@@ -49,11 +49,11 @@ class OsgeoLibpqxx < Formula
   depends_on "doxygen"
   depends_on "graphviz"
 
-  if build.with?("pg10")
-    depends_on "osgeo-postgresql@10"
-  else
-    depends_on "osgeo-postgresql"
-  end
+  # if build.with?("pg10")
+  #   depends_on "osgeo-postgresql@10"
+  # else
+  #   depends_on "osgeo-postgresql"
+  # end
 
   def install
     ENV.cxx11

@@ -56,7 +56,7 @@ class TravisCacheSeed < Formula
   depends_on "pcre"
   depends_on "pkg-config" => :build
   # depends on "postgis" # creates dep on gdal 1.x
-  depends_on "osgeo-postgresql"
+  # depends_on "osgeo-postgresql"
   depends_on "osgeo-proj"
   depends_on "pyenv"
   depends_on "pyqt-qt4"

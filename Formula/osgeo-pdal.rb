@@ -67,11 +67,11 @@ class OsgeoPdal < Formula
   depends_on "osgeo-pcl"
   depends_on "osgeo-hexer"
 
-  if build.with?("pg11")
-    depends_on "osgeo-postgresql@11"
-  else
-    depends_on "osgeo-postgresql"
-  end
+  # if build.with?("pg11")
+  #   depends_on "osgeo-postgresql@11"
+  # else
+  #   depends_on "osgeo-postgresql"
+  # end
 
   # -- The following features have been disabled:
   #  * Bash completion, completion for PDAL command line

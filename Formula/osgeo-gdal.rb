@@ -46,8 +46,8 @@ class OsgeoGdal < Formula
   # we will verify that other versions are not linked
   depends_on Unlinked
 
-  option "with-pg10", "Build with PostgreSQL 10 client"
-  option "with-pg11", "Build with PostgreSQL 11 client"
+  # option "with-pg10", "Build with PostgreSQL 10 client"
+  # option "with-pg11", "Build with PostgreSQL 11 client"
   #deprecated_option "with-postgresql10" => "with-pg10"
 
   depends_on "pkg-config" => :build
@@ -91,7 +91,6 @@ class OsgeoGdal < Formula
   #depends_on "libtiff"
   depends_on "libxml2"
   depends_on "netcdf"
-  # depends_on "osgeo-netcdf" # Also brings in HDF5
   depends_on "openjpeg"
   depends_on "webp"
   depends_on "zstd"
@@ -107,13 +106,13 @@ class OsgeoGdal < Formula
 
   depends_on "osgeo-proj"
 
-  if build.with?("pg10")
-    depends_on "osgeo-postgresql@10"
-  elsif build.with?("pg11")
-    depends_on "osgeo-postgresql@11"
-  else
-    depends_on "osgeo-postgresql"
-  end
+  # if build.with?("pg10")
+  #   depends_on "osgeo-postgresql@10"
+  # elsif build.with?("pg11")
+  #   depends_on "osgeo-postgresql@11"
+  # else
+  #   depends_on "osgeo-postgresql"
+  # end
 
   # use: osgeo-gdal-pdf
   # depends_on "poppler"

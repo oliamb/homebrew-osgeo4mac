@@ -29,14 +29,14 @@ class OsgeoPgsqlOgrFdw < Formula
 
   option "with-pg11", "Build with PostgreSQL 11 client"
 
-  depends_on "osgeo-postgis"
-  depends_on "osgeo-gdal"
+  # depends_on "osgeo-postgis"
+  # depends_on "osgeo-gdal"
 
-  if build.with?("pg11")
-    depends_on "osgeo-postgresql@11"
-  else
-    depends_on "osgeo-postgresql"
-  end
+  # if build.with?("pg11")
+  #   depends_on "osgeo-postgresql@11"
+  # else
+  #   depends_on "osgeo-postgresql"
+  # end
 
   def install
     ENV.deparallelize
@@ -51,11 +51,11 @@ class OsgeoPgsqlOgrFdw < Formula
 
     rm "#{buildpath}/Makefile"
 
-    if build.with?("pg11")
-      postgresql_ver = "#{Formula["osgeo-postgresql@11"].opt_bin}"
-    else
-      postgresql_ver = "#{Formula["osgeo-postgresql"].opt_bin}"
-    end
+    # if build.with?("pg11")
+    #   postgresql_ver = "#{Formula["osgeo-postgresql@11"].opt_bin}"
+    # else
+    #   postgresql_ver = "#{Formula["osgeo-postgresql"].opt_bin}"
+    # end
 
     # Fix bin install path
     # Use CFLAGS from environment

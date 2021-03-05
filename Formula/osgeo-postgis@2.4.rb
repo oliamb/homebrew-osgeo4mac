@@ -66,11 +66,11 @@ class OsgeoPostgisAT24 < Formula
   depends_on "protobuf-c" #  Geobuf and Mapbox Vector Tile support
   depends_on "osgeo-gdal" # for GeoJSON and raster handling
 
-  if build.with?("pg10")
-    depends_on "osgeo-postgresql@10"
-  else
-    depends_on "osgeo-postgresql"
-  end
+  # if build.with?("pg10")
+  #   depends_on "osgeo-postgresql@10"
+  # else
+  #   depends_on "osgeo-postgresql"
+  # end
 
   depends_on "gtk+" # for gui
 
@@ -138,11 +138,11 @@ class OsgeoPostgisAT24 < Formula
 
     args << "--with-xsldir=#{Formula["docbook-xsl"].opt_prefix}/docbook-xsl" if build.with? "html-docs" # /docbook-xsl-nons
 
-    if build.with?("pg10")
-      args << "--with-pgconfig=#{Formula["osgeo-postgresql@10"].opt_bin}/pg_config"
-    else
-      args << "--with-pgconfig=#{Formula["osgeo-postgresql"].opt_bin}/pg_config"
-    end
+    # if build.with?("pg10")
+    #   args << "--with-pgconfig=#{Formula["osgeo-postgresql@10"].opt_bin}/pg_config"
+    # else
+    #   args << "--with-pgconfig=#{Formula["osgeo-postgresql"].opt_bin}/pg_config"
+    # end
 
     system "./autogen.sh"
     system "./configure", *args

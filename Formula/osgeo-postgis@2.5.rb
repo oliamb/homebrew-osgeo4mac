@@ -44,13 +44,13 @@ class OsgeoPostgisAT25 < Formula
   # The latest supported version of PostgreSQL by PostGIS 2.5 is 12,
   # and thus it's the standard version.
   # https://trac.osgeo.org/postgis/wiki/UsersWikiPostgreSQLPostGIS
-  if build.with?("pg10")
-    depends_on "osgeo-postgresql@10"
-  elsif build.with?("pg11")
-    depends_on "osgeo-postgresql@11"
-  else
-    depends_on "osgeo-postgresql"
-  end
+  # if build.with?("pg10")
+  #   depends_on "osgeo-postgresql@10"
+  # elsif build.with?("pg11")
+  #   depends_on "osgeo-postgresql@11"
+  # else
+  #   depends_on "osgeo-postgresql"
+  # end
 
   depends_on "gtk+" # for gui
 

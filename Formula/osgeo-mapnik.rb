@@ -64,11 +64,11 @@ class OsgeoMapnik < Formula
   depends_on "git"
   depends_on "json-c"
 
-  if build.with?("pg10")
-    depends_on "osgeo-postgresql@10"
-  else
-    depends_on "osgeo-postgresql"
-  end
+  # if build.with?("pg10")
+  #   depends_on "osgeo-postgresql@10"
+  # else
+  #   depends_on "osgeo-postgresql"
+  # end
 
   resource "Pillow" do
     url "https://files.pythonhosted.org/packages/81/1a/6b2971adc1bca55b9a53ed1efa372acff7e8b9913982a396f3fa046efaf8/Pillow-6.0.0.tar.gz"
@@ -245,15 +245,15 @@ class OsgeoMapnik < Formula
     # args << "SQLITE_INCLUDES=#{Formula["sqlite"].opt_include}"
     # args << "SQLITE_LIBS=#{Formula["sqlite"].opt_lib}"
 
-    if build.with?("pg10")
-      args << "PG_CONFIG=#{Formula["osgeo-postgresql@10"].opt_bin}/pg_config"
-      args << "PG_INCLUDES=#{Formula["osgeo-postgresql@10"].opt_include}"
-      args << "PG_LIBS=#{Formula["osgeo-postgresql@10"].opt_lib}"
-    else
-      args << "PG_CONFIG=#{Formula["osgeo-postgresql"].opt_bin}/pg_config"
-      args << "PG_INCLUDES=#{Formula["osgeo-postgresql"].opt_include}"
-      args << "PG_LIBS=#{Formula["osgeo-postgresql"].opt_lib}"
-    end
+    # if build.with?("pg10")
+    #   args << "PG_CONFIG=#{Formula["osgeo-postgresql@10"].opt_bin}/pg_config"
+    #   args << "PG_INCLUDES=#{Formula["osgeo-postgresql@10"].opt_include}"
+    #   args << "PG_LIBS=#{Formula["osgeo-postgresql@10"].opt_lib}"
+    # else
+    #   args << "PG_CONFIG=#{Formula["osgeo-postgresql"].opt_bin}/pg_config"
+    #   args << "PG_INCLUDES=#{Formula["osgeo-postgresql"].opt_include}"
+    #   args << "PG_LIBS=#{Formula["osgeo-postgresql"].opt_lib}"
+    # end
 
     args << "PGSQL2SQLITE=True"
 

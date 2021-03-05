@@ -70,13 +70,13 @@ class OsgeoPostgis < Formula
   # The latest supported version of PostgreSQL by PostGIS 3.0 is 12,
   # and thus it's the standard version.
   # https://trac.osgeo.org/postgis/wiki/UsersWikiPostgreSQLPostGIS
-  if build.with?("pg10")
-    depends_on "osgeo-postgresql@10"
-  elsif build.with?("pg11")
-    depends_on "osgeo-postgresql@11"
-  else
-    depends_on "osgeo-postgresql"
-  end
+  # if build.with?("pg10")
+  #   depends_on "osgeo-postgresql@10"
+  # elsif build.with?("pg11")
+  #   depends_on "osgeo-postgresql@11"
+  # else
+  #   depends_on "osgeo-postgresql"
+  # end
 
   depends_on "gtk+" # for gui
 
@@ -144,13 +144,13 @@ class OsgeoPostgis < Formula
 
     args << "--with-xsldir=#{Formula["docbook-xsl"].opt_prefix}/docbook-xsl" if build.with? "html-docs" # /docbook-xsl-nons
 
-    if build.with?("pg10")
-      args << "--with-pgconfig=#{Formula["osgeo-postgresql@10"].opt_bin}/pg_config"
-    elsif build.with?("pg11")
-      args << "--with-pgconfig=#{Formula["osgeo-postgresql@11"].opt_bin}/pg_config"
-    else
-      args << "--with-pgconfig=#{Formula["osgeo-postgresql"].opt_bin}/pg_config"
-    end
+    # if build.with?("pg10")
+    #   args << "--with-pgconfig=#{Formula["osgeo-postgresql@10"].opt_bin}/pg_config"
+    # elsif build.with?("pg11")
+    #   args << "--with-pgconfig=#{Formula["osgeo-postgresql@11"].opt_bin}/pg_config"
+    # else
+    #   args << "--with-pgconfig=#{Formula["osgeo-postgresql"].opt_bin}/pg_config"
+    # end
 
     system "./autogen.sh"
     system "./configure", *args
