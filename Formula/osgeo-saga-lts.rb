@@ -49,7 +49,7 @@ class OsgeoSagaLts < Formula
   depends_on "hdf5"
   depends_on "osgeo-hdf4"
   depends_on "osgeo-proj"
-  depends_on "osgeo-netcdf"
+  depends_on "netcdf"
   depends_on "osgeo-laszip@2"
   depends_on "osgeo-gdal" # (gdal-curl, gdal-filegdb, gdal-hdf4)
   depends_on "osgeo-liblas"

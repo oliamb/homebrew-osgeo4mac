@@ -78,7 +78,7 @@ class OsgeoGrass < Formula
   depends_on "byacc" # yacc
   depends_on "subversion" # for g.extension
   depends_on "openjpeg" # for Pillow
-  depends_on "osgeo-netcdf"
+  depends_on "netcdf"
   depends_on "osgeo-proj"
   depends_on "osgeo-gdal"
   depends_on "osgeo-gdal-python"
@@ -315,7 +315,7 @@ class OsgeoGrass < Formula
       "--with-libs=#{HOMEBREW_PREFIX}/LIB",
       "--with-python=#{libexec}/vendor/bin/python-config",
       "--with-tcltk",
-      "--with-netcdf=#{Formula["osgeo-netcdf"].opt_bin}/nc-config",
+      "--with-netcdf=#{Formula["netcdf"].opt_bin}/nc-config",
       "--with-zstd",
       "--with-zstd-includes=#{Formula["zstd"].opt_include}",
       "--with-zstd-libs=#{Formula["zstd"].opt_lib}",

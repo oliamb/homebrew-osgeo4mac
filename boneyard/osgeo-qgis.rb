@@ -134,7 +134,7 @@ class OsgeoQgis < Formula
   depends_on "osgeo-postgis"
   depends_on "exiv2"
   depends_on "osgeo-liblas"
-  depends_on "osgeo-netcdf"
+  depends_on "netcdf"
   depends_on "osgeo-pdal"
   depends_on "szip"
   depends_on "openvpn"

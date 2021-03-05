@@ -38,7 +38,7 @@ class OsgeoPcl < Formula
   depends_on "szip"
   depends_on "libxml2"
   depends_on "osgeo-proj"
-  depends_on "osgeo-netcdf"
+  depends_on "netcdf"
   depends_on "osgeo-vtk"
   depends_on "osgeo-qt-webkit"
 

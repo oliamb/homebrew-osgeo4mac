@@ -20,7 +20,7 @@ class OsgeoGmt < Formula
   depends_on "cmake" => :build
   depends_on "fftw"
   depends_on "hdf5"
-  depends_on "osgeo-netcdf"
+  depends_on "netcdf"
   depends_on "pcre"
   depends_on "osgeo-gdal"
 
@@ -99,7 +99,7 @@ class OsgeoGmt < Formula
 
     args << "-DGDAL_ROOT=#{Formula["osgeo-gdal"].opt_prefix}" # GDAL_DIR
 
-    args << "-DNETCDF_ROOT=#{Formula["osgeo-netcdf"].opt_prefix}" # NETCDF_DIR
+    args << "-DNETCDF_ROOT=#{Formula["netcdf"].opt_prefix}" # NETCDF_DIR
 
     # SPHINX_DIR or SPHINX_ROOT
     # args << "-DSPHINX_EXECUTABLE=#{Formula["sphinx"].opt_bin}" # sphinx-build

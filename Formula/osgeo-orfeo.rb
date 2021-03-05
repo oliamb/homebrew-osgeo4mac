@@ -80,7 +80,7 @@ class OsgeoOrfeo < Formula
   depends_on "osgeo-libgeotiff"
   depends_on "osgeo-proj"
   depends_on "osgeo-hdf4"
-  depends_on "osgeo-netcdf"
+  depends_on "netcdf"
   depends_on "osgeo-muparserx" => :recommended
   depends_on "osgeo-libkml" => :recommended
   depends_on "osgeo-vtk"

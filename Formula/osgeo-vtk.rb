@@ -110,7 +110,7 @@ class OsgeoVtk < Formula
   depends_on "libtiff"
   depends_on "python"
   depends_on "qt"
-  depends_on "osgeo-netcdf"
+  depends_on "netcdf"
   
   depends_on "gcc"
   depends_on "double-conversion"

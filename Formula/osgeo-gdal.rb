@@ -90,7 +90,8 @@ class OsgeoGdal < Formula
   depends_on "libpng"
   #depends_on "libtiff"
   depends_on "libxml2"
-  depends_on "osgeo-netcdf" # Also brings in HDF5
+  depends_on "netcdf"
+  # depends_on "osgeo-netcdf" # Also brings in HDF5
   depends_on "openjpeg"
   depends_on "webp"
   depends_on "zstd"
@@ -182,7 +183,7 @@ class OsgeoGdal < Formula
       "--with-cfitsio=#{Formula["cfitsio"].opt_prefix}",
       "--with-hdf4=#{Formula["osgeo-hdf4"].opt_prefix}",
       "--with-hdf5=#{Formula["hdf5"].opt_prefix}",
-      "--with-netcdf=#{Formula["osgeo-netcdf"].opt_prefix}",
+      "--with-netcdf=#{Formula["netcdf"].opt_prefix}",
       "--with-jasper=#{Formula["jasper"].opt_prefix}", #  or GDAL_SKIP="Jasper"
       "--with-openjpeg=#{Formula["openjpeg"].opt_prefix}",
       "--with-expat=#{Formula["expat"].opt_prefix}",
